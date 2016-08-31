@@ -1,0 +1,17 @@
+/*=============================
+IPHONE 5 to IPHONE 6 PORTRAIT
+=============================*/
+@media screen and (min-width: 320px) and (max-width: 437px){
+  .item{
+    height : 35em;
+    .carousel-caption h3{
+      font-size : 1.5em;
+    }
+    .p{
+      font-size : .8em;
+      letter-spacing : 0.1em;
+      font-weight : 100;
+    }
+  }
+
+}

@@ -9,6 +9,7 @@ class StaticPagesController < ApplicationController
   end
 
   def landing_page
+
   end
 
   def thank_you
