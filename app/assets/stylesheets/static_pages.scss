@@ -27,7 +27,7 @@ div.flash{
   margin : 10px auto;
 }
 
-html,
+html, 
 body{
   height : 100%;
 }
@@ -40,6 +40,9 @@ body{
   min-height : 100%;
 }
 
+a:hover{
+  text-decoration : none;
+}
 i {
   color : $textColor;
 }
@@ -63,7 +66,7 @@ i {
   display : block;
 }
 
-.site-footer,
+.site-footer, 
 .page-wrapper:after{
   height : 50px;
 }
@@ -79,8 +82,9 @@ i {
   background : rgb(31, 73, 70);
 }
 
-
-
+div.navbar{
+  height : 50px;
+}
 #navbar li a{
   text-transform : uppercase;
   color : $textColor !important;
@@ -149,7 +153,7 @@ div.item > img{
     filter: FlipH;
     -ms-filter: "FlipH";
   }
-
+  
 }
 
 /*==================
@@ -157,7 +161,7 @@ Contact Page Styling
 ====================*/
 
 button[type="submit"]{
-  padding : 2px 7px;
+  padding : 1px 7px;
   margin : 0 auto;
   text-transform : uppercase;
   letter-spacing : 0.15em;
@@ -174,6 +178,7 @@ button[type="submit"]{
 }
 
 
+
 a .glyphicon-envelope{
   color : $wideRowTwo !important;
   font-size : 1em !important;
@@ -186,6 +191,7 @@ a .glyphicon-envelope{
   margin-top: 4px;
   margin-bottom : 0;
 }
+
 
 
 

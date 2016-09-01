@@ -25,21 +25,28 @@ th {
 tr.wideRow{
   background-color : $wideRow !important;
 }
-.form-group {
+.form-group,
+#commenter,
+#product-rating {
   text-transform : uppercase;
   letter-spacing : 0.15em;
   color : $lightred !important;
 }
 
+/*=====================
+**SEARCH FORM STYLING**
+=======================*/
 .search-form{
   margin : 14px 0 0 10px;
   padding: 0 !important;
   label{
     color : $textColor;
-    margin-left: 10px;
-    text-transform : uppercase;
+    margin-left: 2px;
+    text-transform : capitalize;
     letter-spacing : 0.1em;
     font-weight : normal;
+    font-size : 0.95em;
+    font-style : italic;
   }
   input[type="text"]{
     border-radius : 5px;
@@ -55,8 +62,7 @@ tr.wideRow{
 /*======================
 PRODUCTS INDEX STYLING
 ======================*/
-div.col-md-4:nth-child(3n+1){
-  clear : both;
+div.col-md-4{
   margin-bottom : 10px;
   p{
     font-size : 1.2em;
@@ -64,14 +70,31 @@ div.col-md-4:nth-child(3n+1){
   }
 }
 
+div.product-row{
+  margin : 0 auto;
+  display :flex;
+  flex-wrap : wrap;
+}
+
 div.item img{
   width : 55%;
   margin : 0 auto;
 }
 
+div#product-footer{
+  .rated[attr="data-score"]{
+    width : 90% !important;
+    margin : 0 auto;
+  }
+}
 div.product-list img{
   width : 75%;
   margin : 0 auto;
+}
+
+.product-image{
+  max-height: 550px !important;
+  width : auto !important;
 }
 
 div.actions{
@@ -88,9 +111,47 @@ div.price{
   background-color : $wideRow;
   border-radius : 15px;
   letter-spacing : 0.1em;
+  min-height : 30px;
+  vertical-align: middle;
   h3,h4{
-    padding: 2px auto;
+    padding-top : 3px;
     color : $textColor !important;
+  }
+}
+
+div#cable-flash{
+  background-color : #449d44;
+  border-radius : 15px;
+  letter-spacing : 0.1em;
+  height : 35px;
+  padding: 5px;
+  p{
+    color : $textColor !important;
+    font-weight: normal;
+    margin-bottom : 2px;
+    text-align : center;
+  }
+}
+
+div.col-sm-4.product-list{
+  .thumbnail{
+    border : none;
+  }
+}
+
+div.payment{
+  //margin : 0 0 0 10em;
+  padding : 0;
+}
+
+.stripe-button-el{
+   border-radius : 15px !important;
+   margin : 0 auto !important;
+   padding : 0 !important;
+   width : 100% !important;
+  span{
+    background-image : linear-gradient(#015e94);
+    background : none !important;
   }
 }
 
@@ -116,11 +177,13 @@ div.pull-right{
   }
 }
 a[role="button"],
-.button{
+.button,
+.btn{
   text-transform : uppercase;
   letter-spacing : 0.05em;
   border-radius : 15px;
-  padding : 2px 9px 2px 9px;
+  padding : 1px 9px 1px 9px;
   color : $textColor !important;
   margin-bottom : 5px;
 }
+
