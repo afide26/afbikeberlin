@@ -1,15 +1,11 @@
-<p id="notice"><%= notice %></p>
-
-
-<div class="container">
+<div class="container product-container">
+  <%= render 'layouts/flash' %>
   <div class="pull-right">
     <%= link_to new_product_path, class:"btn btn-primary btn-xs", role:"button" do %>
       <i class="glyphicon glyphicon-plus"></i> Add New Product
     <% end %>
   </div>
   <div class="row">
-    <% @products.each do |product| %>
-      <%= render @products %>
-    <% end %>
+  <%= render @products %>
   </div>
 </div>

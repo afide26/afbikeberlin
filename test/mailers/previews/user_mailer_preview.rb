@@ -1,0 +1,6 @@
+# Preview all emails at user_mailerhttp://localhost:3000/rails/mailers/
+class UserMailerPreview < ActionMailer::Preview
+  def contact_form
+    UserMailer.contact_form("alan@example.com", "Alan", "Hello from Bike Berlin.")
+  end
+end

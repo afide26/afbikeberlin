@@ -1,4 +1,10 @@
 <div class="pages">
+  <div class="page-header">
+    <h2 class="text-center"> Featured Products </h2>
+    <div class="email">
+      <a class="text-center visible-xs" href="/contact"><span class="glyphicon glyphicon-envelope"> Bike Berlin</span></a>
+    </div>
+  </div>
   <!-- Start of Image Carousel -->
   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
@@ -6,36 +12,26 @@
       <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
       <li data-target="#carousel-example-generic" data-slide-to="1"></li>
       <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="3"></li>
     </ol>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
-      <!-- Portfolio Image 1 -->
-      <div class="item active">
-        <%= image_tag("racebike.jpg", class: "img-responsive center-block", alt:"racebike1") %>
-        <div class="carousel-caption">
-          <h3>Welcome to Bike Berlin</h3>
-          <p>Your Trusted Source of Quality Pre-Owned Bikes in Berlin</p>
-        </div>
-      </div><!-- End of Portfolio Image 1 -->
-      <!-- Portfolio Image 2 -->
-      <div class="item">
-        <%= image_tag("racebike2.jpg", class: "img-responsive center-block", alt:"racebike2") %>
-        <div class="carousel-caption">
-          <h3>Friendly Team On Site</h3>
-          <p>Our teams are friendly bike experts ready to match you to the right bike</p>
-        </div>
-      </div><!-- End of Portfolio Image 2 -->
-      <!-- Portfolio Image 3 -->
-      <div class="item">
-        <%= image_tag("racebike3.jpg", class: "img-responsive center-block", alt:"racebike3") %>
-        <div class="carousel-caption">
-          <h3>Bikes For All Ages</h3>
-          <p>Check out our storeroom and find the bike that suits your style</p>
-        </div>
-      </div><!-- End of Portfolio Image 3 -->
-    </div>
+      <% @products.each do |product| %>
 
+          <div class="item<%= " active" if product == @products.first %>">
+            <%= link_to product do %>
+              <%= image_tag(product.image_url, class: "img-responsive center-block") %>
+              <br/>
+              <br/>
+              <div class="carousel-caption">
+                <h4><%= product.name %></h4>
+                <p>Price: <%= number_to_currency(product.price) %></p>
+              </div>
+            <% end %>
+          </div>
+      <% end %>
+    </div>
     <!-- Controls -->
     <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left " aria-hidden="true"></span>
