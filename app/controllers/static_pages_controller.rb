@@ -13,4 +13,8 @@ class StaticPagesController < ApplicationController
     @products = Product.all
   end
 
+  def landing_page
+     @products = Product.all
+  end
+
 end

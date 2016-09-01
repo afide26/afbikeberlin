@@ -1,19 +1,23 @@
+/*==================*/
+/*Color variables*/
+/*===================*/
+$lightred:rgb(255, 103, 70);
+$textColor : #fffeea;
+$wideRow: rgb(31, 73, 70);
+
 /*=============================
 IPHONE 5 to IPHONE 6 PORTRAIT
 =============================*/
 @media screen and (min-width: 320px) and (max-width: 437px){
-  .item{
-    height : 35em;
-    .carousel-caption h3{
-      font-size : 1.5em;
-    }
-    .p{
-      font-size : .8em;
-      letter-spacing : 0.1em;
-      font-weight : 100;
-    }
+
+  .product-list{
+    width : 100% !important;
+    margin : 0 auto;
   }
 
+  div.site-nav-width{
+    margin : 3px 5px 3px 5px !important;
+  }
   .panel-title a{
     font-size : .7em;
     letter-spacing : 0;
@@ -29,22 +33,115 @@ IPHONE 5 to IPHONE 6 PORTRAIT
     }
   }
 
+    .page-header{
+        padding-bottom : 2px;
+        h2{
+        font-size : 1.75em !important;
+        padding : 0;
+        }
+    }
+    .item img{
+      width : 100% !important;
+      padding-top: 30px !important;
+      padding-bottom : 30px !important;
+      margin-bottom : 50px !important;
+    }
+    .carousel-caption {
+      padding : 0 !important;
+      margin-top : 80px;
+    }
+
+    .carousel-indicators{
+      margin-top : 50px !important;
+      margin-bottom : 1px !important;
+    }
+
+    .item{
+      .carousel-caption p{
+        font-size : 1.1em !important;
+        color : $textColor !important;
+        margin-top : 5px !important;
+        margin-bottom : 15px !important;
+        background-color : $wideRow !important;
+      }
+      .carousel-caption h4{
+        font-size : 1em !important;
+        margin-top : 15px !important;
+        margin-bottom : 1px !important;
+      }
+    }
 }
 /*=============================
       IPAD PORTRAIT
 =============================*/
-@media screen and (width: 768px){
+@media screen and (max-width: 769px){
+    body{
+      padding-top : 50px !important;
+    }
 
+    div.product-container{
+      width : 95% !important;
+    }
+
+    div.site-nav-width{
+      margin : 3px 5px 3px 5px !important;
+      border : none;
+    }
+
+    .navbar-right li a,
+    input[type="text"],
+    button[type="submit"],
+    .search-form label{
+      font-size : .8em;
+    }
+
+    div.row{
+      width : 100%;
+      margin : 0 auto;
+    }
     div.col-sm-2.product-list{
-       float : left;
-      width : 44%;
-      margin : 20px 0 20px 30px;
+      float : left;
+      width : 50%;
+      margin : 0 auto;
       p{
         font-size : 1.2em;
         line-height : 1.1em;
       }
     }
-    div.col-sm-2.product-list:nth-child(3n+0){
-      clear : both;
+    .page-header{
+        padding-bottom : 2px;
+        h2{
+        font-size : 1.75em !important;
+        padding : 0;
+        }
+    }
+    .item img{
+      width : 80% !important;
+      margin-top : 1px;
+      padding-top: 10px;
+    }
+
+    .carousel-caption h4{
+       font-size : 1.2em !important;
+    }
+
+    .carousel-indicators{
+      margin-top : 1px;
+      margin-bottom : 1px !important;
+    }
+
+    .item{
+      p{
+        font-size : 1.1em !important;
+        color : $textColor !important;
+        margin-top : 1px !important;
+        margin-bottom : 1px !important;
+        background-color : $wideRow !important;
+      }
+      h4{
+        font-size : 1.1em !important;
+        margin-top : 1px !important;
+        margin-bottom : 1px !important;
+      }
     }
 }

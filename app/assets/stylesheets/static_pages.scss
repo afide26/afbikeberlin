@@ -17,6 +17,11 @@ $wideRow: rgb(31, 73, 70);
   box-sizing : border-box;
 }
 
+div.flash{
+  width : 100% !important;
+  margin : 10px auto;
+}
+
 html,
 body{
   height : 100%;
@@ -37,7 +42,16 @@ i {
   margin : 0 auto !important;
   width : 90%;
   padding : 5px;
+  h2{
+    text-transform : uppercase;
+    letter-spacing :0.25em;
+  }
 }
+
+.page-header{
+  margin : 5px auto;
+}
+
 
 .page-wrapper:after{
   content : "";
@@ -60,11 +74,16 @@ i {
   background : rgb(31, 73, 70);
 }
 
+
+
 #navbar li a{
   text-transform : uppercase;
   color : $textColor !important;
 }
 
+div.site-nav-width{
+  margin : 3px 35px 3px 35px;
+}
 
 h1,
 h2,

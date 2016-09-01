@@ -17,6 +17,15 @@
         <li><%= nav_link("Products", products_path) %></li>
         <li><%= nav_link("FAQ", faq_path) %></li>
         <li><%= nav_link("Contact", contact_path) %></li>
+        <li>
+          <%= form_tag("/products", method: "get", class:"search-form") do %>
+            <%= label_tag(:q, "Search for:") %>
+            <%= text_field_tag(:q) %>
+            <%= button_tag(type:"submit", class:"btn btn-success btn-xs") do  %>
+              <span class="glyphicon glyphicon-search"></span>Submit
+            <% end %>
+          <% end %>
+        </li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
