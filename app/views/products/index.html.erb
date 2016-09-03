@@ -1,10 +1,13 @@
+<%= provide(:title, "All Products")%>
+<div class="pull-right">
+<br/>
+<%= link_to new_product_path, class:"btn btn-primary btn-xs", role:"button" do %>
+  <i class="glyphicon glyphicon-plus"></i> Add New Product
+<% end %>
+</div>
 <div class="container product-container">
-  <div class="pull-right">
-    <%= link_to new_product_path, class:"btn btn-primary btn-xs", role:"button" do %>
-      <i class="glyphicon glyphicon-plus"></i> Add New Product
-    <% end %>
-  </div>
-  <div class="row">
-  <%= render @products %>
+  <%= render 'layouts/flash' %>
+  <div class="row product-row">
+    <%= render @products %>
   </div>
 </div>
