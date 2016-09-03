@@ -4,19 +4,14 @@
     <%= image_tag(product.image_url, class:"img-responsive") %>
     <h2><%= product.name %></h2>
     <% if product.color.present? %>
-    <h3>Color:<%= product.color %></h3>
+    <h3>Colour:<%= product.color %></h3>
     <% end %>
     <p><%= simple_format(truncate(product.description, length: 300, omission:'....(continued)')) %></p>
     <div class="price">
       <h3 class="text-center">Price: <%= number_to_currency(product.price) %></h3>
     </div>
-    <div class="actions visible-lg">
-      <% if !user_signed_in? %>
-        <%= link_to product, class:"btn btn-info btn-xs", role:"button" do %>
-          <i class="glyphicon glyphicon-eye-open"></i> Show Details
-        <% end %>
-      <% else %>
-        <hr class="style-two visible-lg">
+    <div class="actions">
+      <% if signed_in? && current_user.admin? %>
         <%= link_to product, class:"btn btn-info btn-xs", role:"button" do %>
           <i class="glyphicon glyphicon-eye-open"></i> Show Details
         <% end %> |
@@ -25,6 +20,11 @@
         <% end %> |
         <%= link_to product, class:"btn btn-danger btn-xs", role:"button", method: :delete, data: { confirm: 'Are you sure?' } do%>
           <i class="glyphicon glyphicon-trash"></i> Trash
+        <% end %>
+      <% else %>
+        <hr class="style-two">
+        <%= link_to product, class:"btn btn-info btn-xs", role:"button" do %>
+          <i class="glyphicon glyphicon-eye-open"></i> Show Details
         <% end %>
       <% end %>
     </div>

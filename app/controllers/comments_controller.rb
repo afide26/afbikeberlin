@@ -1,4 +1,3 @@
-
 class CommentsController < ApplicationController
 
   def create
@@ -10,13 +9,18 @@ class CommentsController < ApplicationController
         format.html{redirect_to @product, success: 'Comment was created successfully'}
         format.json{render :show, status: :created, location: @product}
       else
-        format.html{redirect_to @product, warning: 'Your comment was not saved. Comments need to be at least 10 characters. Ratings must be present'}
+        format.html{redirect_to @product, warning: 'Your comment was not saved.'}
         format.json{render json: @comment.errors, status: :unprocessable_entity}
       end
     end
   end
 
   def destroy
+    @comment = Comment.find(params[:id])
+    product = @comment.product
+
+    @comment.destroy
+    redirect_to product
   end
 
   private
