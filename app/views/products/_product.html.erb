@@ -4,7 +4,7 @@
     <%= image_tag(product.image_url, class:"img-responsive") %>
     <h2><%= product.name %></h2>
     <% if product.color.present? %>
-    <h3>Colour:<%= product.color %></h3>
+    <h3>Color:<%= product.color %></h3>
     <% end %>
     <p><%= simple_format(truncate(product.description, length: 300, omission:'....(continued)')) %></p>
     <div class="price">
@@ -13,12 +13,12 @@
     <div class="actions visible-lg">
       <% if !user_signed_in? %>
         <%= link_to product, class:"btn btn-info btn-xs", role:"button" do %>
-          <i class="glyphicon glyphicon-eye-open"></i> Show
+          <i class="glyphicon glyphicon-eye-open"></i> Show Details
         <% end %>
       <% else %>
         <hr class="style-two visible-lg">
         <%= link_to product, class:"btn btn-info btn-xs", role:"button" do %>
-          <i class="glyphicon glyphicon-eye-open"></i> Show
+          <i class="glyphicon glyphicon-eye-open"></i> Show Details
         <% end %> |
         <%= link_to edit_product_path(product), class:"btn btn-warning btn-xs", role:"button" do %>
           <i class="glyphicon glyphicon-wrench"></i> Edit

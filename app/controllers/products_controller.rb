@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:index, :show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:edit, :update, :destroy]
   before_action :authorize_admin, only: [:create, :edit, :update, :destroy]
   # GET /products
   # GET /products.json
@@ -26,6 +26,7 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    @comments = @product.comments.order("created_at DESC").paginate(:page =>params[:page], :per_page=>3)
   end
 
   # GET /products/new
@@ -77,7 +78,6 @@ class ProductsController < ApplicationController
       # format.json { head :no_content }
     end
   end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
