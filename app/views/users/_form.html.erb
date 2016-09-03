@@ -1,27 +1,34 @@
-<%= form_for(user) do |f| %>
-  <% if user.errors.any? %>
+
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
       <ul>
-      <% user.errors.full_messages.each do |message| %>
+      <% @user.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
+    <%= f.text_field :first_name, autofocus: true, class:"form-control" %>
   </div>
-
-  <div class="field">
+  <div class="form-group">
     <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
+    <%= f.text_field :last_name, class:"form-control"  %>
   </div>
-
   <div class="actions">
-    <%= f.submit %>
+    <% if @user.new_record? %>
+      <%= button_tag(type:"submit", class:"btn btn-info btn-block") do %>
+        <span class="glyphicon glyphicon-pencil"></span> Sign Up
+      <% end %>
+    <% else %>
+      <%= button_tag(type:"submit", class:"btn btn-danger btn-block") do %>
+        <span class="glyphicon glyphicon-wrench"></span> Update Details
+      <% end %>
+    <% end %>
   </div>
 <% end %>

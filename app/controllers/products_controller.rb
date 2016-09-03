@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:index, :show, :edit, :update, :destroy]
+  before_action :authorize_admin, only: [:create, :edit, :update, :destroy]
   # GET /products
   # GET /products.json
   def index
@@ -58,7 +59,7 @@ class ProductsController < ApplicationController
   def update
     respond_to do |format|
       if @product.update(product_params)
-        format.html { redirect_to product_path, :info=>'Product was successfully updated.' }
+        format.html { redirect_to session.delete(:return_to), :info=>'Product was successfully updated.' }
         format.json { render :show, status: :ok, location: @product }
       else
         format.html { render :edit }
@@ -86,5 +87,10 @@ class ProductsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
       params.require(:product).permit(:name, :description, :image_url, :color, :price)
+    end
+
+    def authorize_admin
+      return unless !current_user.admin?
+      redirect_to root_path, :alert => "Only admins can create new or update products"
     end
 end
