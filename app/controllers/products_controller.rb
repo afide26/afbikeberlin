@@ -32,6 +32,7 @@ class ProductsController < ApplicationController
   # GET /products/new
   def new
     @product = Product.new
+    authorize! :new, @product
   end
 
   # GET /products/1/edit

@@ -7,6 +7,8 @@ class Ability
       can :manage, :all
     else
       can :read, :all
+      cannot :create, :products
+      cannot :read, :users
     end
   end
 end
