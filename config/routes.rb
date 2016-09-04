@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get 'about'   => 'static_pages#about'
 
+  get 'index'   => 'static_pages#index'
+
   get 'landing' => 'products#landing_page'
 
   get 'contact' => 'static_pages#contact'
