@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
       if @comment.save
         format.html{redirect_to @product, success: 'Comment was created successfully'}
         format.json{render :show, status: :created, location: @product}
+        format.js
       else
         format.html{redirect_to @product, warning: 'Your comment was not saved.'}
         format.json{render json: @comment.errors, status: :unprocessable_entity}
@@ -20,6 +21,7 @@ class CommentsController < ApplicationController
     product = @comment.product
 
     @comment.destroy
+    flash[:danger] = "Comment deleted."
     redirect_to product
   end
 

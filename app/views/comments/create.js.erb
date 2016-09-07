@@ -1,0 +1,5 @@
+$('#new_comment').html("<div class='alert alert-info review text-center'>Thank you for your review!</div>");
+$('.product-reviews').prepend("<%= j render @comment %>");
+$("#average-rating").attr('data-score', "<%= @product.avg_rating %>");
+$('.alert').delay(2000).fadeOut(3000);
+
