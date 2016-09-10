@@ -1,7 +1,8 @@
+
+<div class="container">
   <div class="container">
-    <div class="row">
+    <div class="row" data-product-id="<%= @product.id %>">
       <div class="page-header">
-      <% cache @product do %>   <!-- Start of caching  -->
         <h2><strong>Name:</strong><%= @product.name %></h2>
       </div>
       <div class="col-sm-4 product-list">
@@ -13,13 +14,13 @@
               <h4 class="text-center">Price: <%= number_to_currency(@product.price) %></h4>
             </div>
             <div class="payment">
-              <%= form_tag "/payments/create" do %>
+              <%= form_tag("/payments/create", remote: true) do %>
                <%= render partial: "shared/stripe_checkout_button" %>
+               <%= hidden_field_tag(:product_id, @product.id) %>
               <% end %>
             </div>
           </div>
         </div>
-
       </div>
       <div class="col-sm-8">
         <p id="product-rating">Average Rating: <div class="rated" data-score="<%= @product.avg_rating %>"></div></p>
@@ -40,16 +41,18 @@
             <i class="glyphicon glyphicon-chevron-left"></i> Show Full List
             <% end %>
           <% end %>
-        <% end %><!--  End of caching -->
         </div>
-        <%= render 'new_comment' %>
-        <hr class="style-two">
-        <div class="alert alert-info fade-in" style="display:none" role="alert">
-        <a href="#" class="close" data-dismiss="alert" aria-label="close"><span class="glyphicon glyphicon-remove-sign"></span></a>
-        <h4>A new coment was posted!</h4>
-        </div>
-        <%= render 'comments' %>
       </div>
     </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-md-offset-4">
+      <%= render 'new_comment' %>
+      <hr class="style-two">
+      <div id="cable-flash" class="alert alert-info fade-in" style="display:none" role="alert">
+          <p>A new comment was posted!</p>
+      </div>
+      <%= render 'comments' %>
+    </div>
   </div>
+</div>
 
