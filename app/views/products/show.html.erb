@@ -1,6 +1,7 @@
   <div class="container">
     <div class="row">
       <div class="page-header">
+      <% cache @product do %>   <!-- Start of caching  -->
         <h2><strong>Name:</strong><%= @product.name %></h2>
       </div>
       <div class="col-sm-4 product-list">
@@ -39,6 +40,7 @@
             <i class="glyphicon glyphicon-chevron-left"></i> Show Full List
             <% end %>
           <% end %>
+        <% end %><!--  End of caching -->
         </div>
         <%= render 'new_comment' %>
         <hr class="style-two">
