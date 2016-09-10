@@ -24,7 +24,7 @@ Rails.application.configure do
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = true
-
+  config.assets.digest = true
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
@@ -83,6 +83,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
   config.web_socket_server_url = "wss://cfbikeberlinapp.herokuapp.com/cable"
-  config.action_cable.allowed_request_origins = ['https://cfbikeberlinapp.herokuapp.com', 'http://cfbikeberlinapp.herokuapp.com']
+  config.action_cable.allowed_request_origins = ['https://cfbikeberlinapp.herokuapp.com', /http:\/\/cfbikeberlinapp.herokuapp.com.*/]
 end

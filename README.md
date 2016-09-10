@@ -5,8 +5,9 @@
 ###There are key learnings for this app
 1. Follow up and build on learnings from the Front End Web section of the course
 2. Build on Ruby knowledge
-3. Familiarize and note down key learnings from the lesssons about creating web applications using the Rails framework.
+3. Familiarize and note down key learnings from the lessons about creating web applications using the Rails framework.
 4. Applying basic AJAX in Rails to save on page reloads
+5. New Action Cable Feature
 
 ####Models Used for this application
 1. User model - has_many :orders, has_many :products, has_many :comments
