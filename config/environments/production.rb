@@ -83,7 +83,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-
-  config.web_socket_server_url = "wss://cfbikeberlinapp.herokuapp.com/cable"
-  config.action_cable.allowed_request_origins = ['https://cfbikeberlinapp.herokuapp.com', /http:\/\/cfbikeberlinapp.herokuapp.com.*/]
+  config.action_cable.url = "wss://cfbikeberlinapp.herokuapp.com/cable"
+  # config.web_socket_server_url = "wss://cfbikeberlinapp.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://cfbikeberlinapp.herokuapp.com','https://cfbikeberlinapp.herokuapp.com']
 end
