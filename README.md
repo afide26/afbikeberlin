@@ -1,6 +1,7 @@
-#This is the README file ![CareerFoundry Logo](http://en.webrazzi.com/wp-content/uploads/2014/06/CareerFoundry-logo.jpg)
-#[Web Development Course Student Rails Demo App](http://www.careerfoundry.com)
+#This is the README file for
 
+#[Web Development Course Student Rails Demo App](http://www.careerfoundry.com)
+[CareerFoundry Logo](http://en.webrazzi.com/wp-content/uploads/2014/06/CareerFoundry-logo.jpg)
 ### The demo application can be found at [cfbikeberlinapp.herokuapp.com](https://afbikeberlin.herokuapp.com/)
 ###There are key learnings for this app
 1. Follow up and build on learnings from the Front End Web section of the course
