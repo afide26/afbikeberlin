@@ -2,7 +2,7 @@ class Comment < ApplicationRecord
   belongs_to :user
   belongs_to :product
 
-  validates :body, presence: true, length: {minimum: 10}
+  validates :body, presence: true, length: {minimum: 3}
   validates :user, presence: true
   validates :product, presence: true
   validates :rating, :numericality => {only_integer:true, :greater_than => 0}
