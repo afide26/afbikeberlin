@@ -1,11 +1,11 @@
-#This is the README file for
-###[CareerFoundry Logo](http://en.webrazzi.com/wp-content/uploads/2014/06/CareerFoundry-logo.jpg)
-###[Web Development Course Student Rails Demo App](http://www.careerfoundry.com)
-### The demo application can be found at [cfbikeberlinapp.herokuapp.com](https://afbikeberlin.herokuapp.com/)
+#This is the README file for the ![CareerFoundry Logo](http://en.webrazzi.com/wp-content/uploads/2014/06/CareerFoundry-logo.jpg)
+###[Web Development Course Rails Demo App - Student Submission](http://www.careerfoundry.com)
+
+### The demo application can be found at [cfbikeberlinapp.herokuapp.com](https://cfbikeberlinapp.herokuapp.com/)
 ###There are key learnings for this app
 1. Follow up and build on learnings from the Front End Web section of the course
 2. Build on Ruby knowledge
-3. Familiarize and note down key learnings from the lessons about creating web applications using the Rails framework.
+3. Familiarize and note down key learnings from the lesssons about creating web applications using the Rails framework.
 4. Applying basic AJAX in Rails to save on page reloads
 5. New Action Cable Feature
 

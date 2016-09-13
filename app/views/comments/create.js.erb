@@ -1,4 +1,7 @@
 $('#new_comment').html("<div class='alert alert-info review text-center'>Thank you for your review!</div>");
 // $('.product-reviews').prepend("<%= j render @comment %>");
 
-// refreshRating();
+
+$('.alert').delay(2000).fadeOut(5000);
+refreshRating();
+$('#comment-form').prepend("<%= j render(:partial =>'products/new_comment'  ) %>");
