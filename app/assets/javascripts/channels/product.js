@@ -12,7 +12,7 @@ App.product = App.cable.subscriptions.create("ProductChannel", {
     console.log("Hello");
     $('#cable-flash').show();
     $('.product-reviews').prepend(data.comment);
-    refreshRating();
+    // refreshRating();
      $('.alert').delay(2000).fadeOut(3000);
   },
 
