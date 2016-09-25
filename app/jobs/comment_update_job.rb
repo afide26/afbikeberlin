@@ -2,7 +2,7 @@ class CommentUpdateJob < ApplicationJob
   queue_as :default
 
   def perform(comment, current_user)
-    ProductChannel.broadcast_to comment.product_id, comment: render_comment(comment, current_user)
+    ProductChannel.broadcast_to comment.product_id, comment: render_comment(comment, current_user), avg_rating: comment.product.avg_rating
   end
 
 private
