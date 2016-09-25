@@ -14,7 +14,7 @@
               <h4 class="text-center">Price: <%= number_to_currency(@product.price) %></h4>
             </div>
             <div class="payment">
-              <%= form_tag("/payments/create", remote: true) do %>
+              <%= form_tag("/payments/create") do %>
                <%= render partial: "shared/stripe_checkout_button" %>
                <%= hidden_field_tag(:product_id, @product.id) %>
               <% end %>
