@@ -1,6 +1,5 @@
 
 <div class="col-sm-2 col-md-4 product-list">
-<% cache @product do %> <!-- Start of individual product caching -->
   <%= link_to product  do%>
     <%= image_tag(product.image_url, class:"img-responsive") %>
     <h2><%= product.name %></h2>
@@ -31,5 +30,4 @@
     </div>
     <hr class="style-two visible-lg">
   <% end %>
-<% end %> <!-- End of individual product caching -->
 </div>
