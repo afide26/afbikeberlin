@@ -20,6 +20,7 @@
           :user_id => @user.id,
           :total => @product.price
           )
+        PayMailer.payreceived(@user.email, @product)
       end
     flash[:success] = "Your transaction processed successfully!"
     rescue Stripe::CardError => e
