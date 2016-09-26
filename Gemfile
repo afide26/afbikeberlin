@@ -64,4 +64,4 @@ gem 'rails-controller-testing'
 gem 'stripe'
 gem "brakeman", :require => false
 # gem 'redis-rails'
-gem 'redis', '~> 3.0'
+gem 'redis', '~> 3.2'

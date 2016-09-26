@@ -1,4 +1,5 @@
-App.product = App.cable.subscriptions.create({channel:"ProductChannel"}, {
+
+App.product = App.cable.subscriptions.create("ProductChannel", {
   connected: function() {
     // Called when the subscription is ready for use on the server
   },
@@ -9,10 +10,9 @@ App.product = App.cable.subscriptions.create({channel:"ProductChannel"}, {
 
   received: function(data) {
     // Called when there's incoming data on the websocket for this channel
-    console.log("Hello");
+    refreshRating();
     $('#cable-flash').show();
     $('.product-reviews').prepend(data.comment);
-    refreshRating();
     $('.alert').delay(2000).fadeOut(3000);
   },
 

@@ -5,10 +5,11 @@ class CommentsController < ApplicationController
     @comment = @product.comments.new(comment_params)
     @comment.user = current_user
     @user = request.env['warden'].user
+
     respond_to do |format|
       if @comment.save
         # ActionCable.server.broadcast 'product_channel', comment: @comment
-        format.html{render :show, success: 'Comment was created successfully'}
+        format.html{redirect_to @product, success: 'Comment was created successfully'}
         format.json{render :show, status: :created, location: @product}
         format.js
       else
