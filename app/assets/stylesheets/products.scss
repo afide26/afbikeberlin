@@ -92,6 +92,9 @@ div.product-list img{
   margin : 0 auto;
 }
 
+div.product-list a:hover{
+  text-decoration: none;
+}
 .product-image{
   max-height: 550px !important;
   width : auto !important;
@@ -139,8 +142,11 @@ div.col-sm-4.product-list{
   }
 }
 
+
+
+
 div.payment{
-  //margin : 0 0 0 10em;
+  /*margin : 0 0 0 10em;*/
   padding : 0;
 }
 

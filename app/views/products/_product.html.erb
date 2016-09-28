@@ -1,11 +1,11 @@
 
 <div class="col-sm-2 col-md-4 product-list">
-  <%= link_to product  do%>
-    <%= image_tag(product.image_url, class:"img-responsive") %>
-    <h2><%= product.name %></h2>
+    <%= link_to product do %>
+      <%= image_tag(product.image_url, class:"img-responsive") %>
+      <h2><%= product.name %></h2>
+    <% end %>
     <% if product.color.present? %>
     <h3>Colour:<%= product.color %></h3>
-    <% end %>
     <p><%= simple_format(truncate(product.description, length: 300, omission:'....(continued)')) %></p>
     <div class="price">
       <h3 class="text-center">Price: <%= number_to_currency(product.price) %></h3>

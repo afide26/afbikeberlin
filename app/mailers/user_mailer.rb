@@ -7,4 +7,12 @@ class UserMailer < ApplicationMailer
            :to      => "afidedev26@gmail.com",
            :subject => "New message from #{name}.")
   end
+
+
+  def order_complete(user, product)
+      @user = user
+      @product = product
+      mail(to: @user, subject: 'Thank you from Bike Berlin!')
+  end
+
 end

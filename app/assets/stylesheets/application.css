@@ -22,3 +22,7 @@ div.alert{
 div.alert-alert{
   background-color : #F2DEDE;
 }
+
+a:hover{
+  text-decoration: none;
+  }

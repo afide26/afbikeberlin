@@ -25,7 +25,7 @@
   <% end %> <!-- End of caching for product show page -->
       <div class="col-sm-8">
         <%= simple_format(@product.description) %>
-        <p id="product-rating">Average Rating: <div class="rated" data-score="<%= @product.avg_rating %>"></div></p>
+        <p id="product-rating">Average Rating: <div class="rated avg-rating" data-score="<%= @product.avg_rating %>"></div></p>
         <div class="actions">
           <% if signed_in? && current_user.admin? %>
             <%= link_to edit_product_path(@product), class:"btn btn-warning btn-xs", role:"button" do %>

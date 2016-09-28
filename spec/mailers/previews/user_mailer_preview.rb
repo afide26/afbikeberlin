@@ -3,4 +3,8 @@ class UserMailerPreview < ActionMailer::Preview
   def contact_form
     UserMailer.contact_form("alan@example.com", "Alan", "Hello from Bike Berlin.")
   end
+
+  def order_complete
+    UserMailer.order_complete(@user, @product)
+  end
 end

@@ -20,9 +20,10 @@
           :user_id => @user.id,
           :total => @product.price
           )
-        PayMailer.payreceived(@user.email, @product)
+        UserMailer.order_complete(@user.email, @product.name).deliver_now
       end
-    flash[:success] = "Your transaction processed successfully!"
+
+    flash.now[:success] = "Your transaction processed successfully!"
     rescue Stripe::CardError => e
       # The card has been declined
       body = e.json_body
