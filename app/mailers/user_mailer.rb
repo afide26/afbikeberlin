@@ -1,5 +1,6 @@
 class UserMailer < ApplicationMailer
   default from: "afidedev26@gmail.com"
+  layout 'mailer'
 
   def contact_form(email, name, message)
     @message = message
@@ -12,7 +13,7 @@ class UserMailer < ApplicationMailer
   def order_complete(user, product)
       @user = user
       @product = product
-      mail(to: @user, subject: 'Thank you from Bike Berlin!')
+      mail(to: user, subject: 'Thank you from Bike Berlin!')
   end
 
 end
