@@ -5,6 +5,6 @@ class UserMailerPreview < ActionMailer::Preview
   end
 
   def order_complete
-    UserMailer.order_complete("alan@example.com", @product)
+    UserMailer.order_complete("alan@example.com", "Alan", @product)
   end
 end

@@ -22,7 +22,7 @@
           )
 
       end
-      UserMailer.order_complete(@user.first_name, @product).deliver_now
+      UserMailer.order_complete(@user.email, @user.first_name, @product).deliver_now
     flash.now[:success] = "Your transaction processed successfully!"
     rescue Stripe::CardError => e
       # The card has been declined
